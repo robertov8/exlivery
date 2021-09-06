@@ -4,10 +4,6 @@ defmodule Exlivery.Users.User do
   @enforce_keys @keys
   defstruct @keys
 
-  @spec build(any, any, any, any, any) ::
-          {:error, <<_::144>>}
-          | {:ok,
-             %Exlivery.Users.User{address: any, age: any, cpf: bitstring, email: any, name: any}}
   def build(name, email, cpf, age, address) when age >= 18 and is_bitstring(cpf) do
     {:ok,
      %__MODULE__{
