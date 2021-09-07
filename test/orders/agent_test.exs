@@ -1,9 +1,9 @@
 defmodule Exlivery.Orders.AgentTest do
   use ExUnit.Case
 
-  alias Exlivery.Orders.Agent, as: OrderAgent
-
   import Exlivery.Factory
+
+  alias Exlivery.Orders.Agent, as: OrderAgent
 
   describe "save/1" do
     test "saves the order" do
@@ -11,7 +11,7 @@ defmodule Exlivery.Orders.AgentTest do
 
       OrderAgent.start_link(%{})
 
-      assert {:ok, __uuid} = OrderAgent.save(order)
+      assert {:ok, _uuid} = OrderAgent.save(order)
     end
   end
 
